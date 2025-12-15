@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Surpresa de Carnaval - Resgate seu Prêmio</title>
+    <title>Surpresa de Carnaval</title>
+
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
         * {
             margin: 0;
@@ -12,11 +15,9 @@
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
+
         body {
-            background: linear-gradient(135deg, #ff0080, #ff8c00, #ffff00, #00ff00, #00ffff, #0000ff, #8b00ff);
-            background-size: 400% 400%;
-            animation: carnivalBackground 15s ease infinite;
+            background: #b6ff00;
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -24,273 +25,212 @@
             padding: 20px;
             color: #fff;
         }
-        
-        @keyframes carnivalBackground {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        
+
         .container {
             max-width: 800px;
             width: 100%;
-            background-color: rgba(0, 0, 0, 0.85);
-            border-radius: 20px;
+            background: rgba(0, 0, 0, 0.88);
+            border-radius: 25px;
             padding: 40px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
             text-align: center;
-            border: 3px solid #ff0080;
             position: relative;
+            border: 3px solid #ff0080;
             overflow: hidden;
         }
-        
+
         .container::before {
             content: "";
             position: absolute;
-            top: -10px;
-            left: -10px;
-            right: -10px;
-            bottom: -10px;
-            background: linear-gradient(45deg, #ff0080, #ff8c00, #ffff00, #00ff00, #00ffff, #0000ff, #8b00ff);
+            inset: -10px;
+            background: linear-gradient(45deg,
+                #ff0080, #ff8c00, #ffff00,
+                #00ff00, #00ffff, #0000ff, #8b00ff);
             z-index: -1;
-            filter: blur(20px);
-            opacity: 0.7;
+            filter: blur(12px);
+            opacity: 0.5;
         }
-        
-        .carnival-title {
+
+        h1 {
             font-size: 2.8rem;
-            margin-bottom: 10px;
             color: #ffeb3b;
             text-shadow: 0 0 10px #ff0080, 0 0 20px #ff0080;
-            letter-spacing: 1px;
+            margin-bottom: 10px;
         }
-        
+
         .subtitle {
             font-size: 1.5rem;
-            margin-bottom: 30px;
             color: #00ffff;
+            margin-bottom: 30px;
         }
-        
-        .congrats-message {
+
+        .prize {
             font-size: 2rem;
-            margin: 30px 0;
             color: #ff9800;
             padding: 20px;
-            background-color: rgba(255, 0, 128, 0.1);
+            margin: 30px 0;
+            background: rgba(255, 0, 128, 0.15);
             border-radius: 15px;
             border-left: 5px solid #ff0080;
             border-right: 5px solid #ff0080;
         }
-        
+
         .instructions {
             font-size: 1.2rem;
-            line-height: 1.6;
-            margin-bottom: 40px;
+            background: rgba(0, 0, 0, 0.35);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
             color: #e0e0e0;
-            background-color: rgba(0, 0, 0, 0.3);
-            padding: 25px;
-            border-radius: 15px;
-            text-align: left;
         }
-        
+
         .rules {
-            background-color: rgba(255, 0, 128, 0.15);
+            background: rgba(255, 0, 128, 0.15);
             border-radius: 15px;
             padding: 25px;
-            margin: 30px 0;
-            text-align: left;
             border: 2px dashed #ff0080;
+            margin-bottom: 30px;
+            text-align: left;
         }
-        
-        .rules-title {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: #ffeb3b;
+
+        .rules h2 {
             text-align: center;
+            color: #ffeb3b;
+            margin-bottom: 15px;
         }
-        
-        .rules-list {
-            list-style-type: none;
-            padding-left: 10px;
+
+        .rules ul {
+            list-style: none;
         }
-        
-        .rules-list li {
-            padding: 8px 0;
+
+        .rules li {
             font-size: 1.1rem;
-            color: #fff;
+            padding: 8px 0;
         }
-        
-        .rules-list li i {
+
+        .rules i {
             color: #00ff00;
             margin-right: 10px;
         }
-        
-        .instagram-link {
+
+        .instagram {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #ffeb3b;
+        }
+
+        .instagram-btn {
             display: inline-block;
-            margin-top: 30px;
-            padding: 15px 30px;
-            background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
-            color: white;
+            margin-top: 15px;
+            padding: 15px 35px;
+            border-radius: 50px;
             text-decoration: none;
             font-size: 1.3rem;
             font-weight: bold;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(225, 48, 108, 0.4);
+            color: #fff;
+            background: linear-gradient(45deg,
+                #405de6, #5851db, #833ab4,
+                #c13584, #e1306c, #fd1d1d);
+            transition: 0.3s;
         }
-        
-        .instagram-link:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(225, 48, 108, 0.6);
-            background: linear-gradient(45deg, #fd1d1d, #e1306c, #c13584, #833ab4, #5851db, #405de6);
+
+        .instagram-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(225,48,108,.6);
         }
-        
-        .instagram-link i {
-            margin-right: 10px;
-            font-size: 1.5rem;
-        }
-        
+
         .footer {
             margin-top: 40px;
-            color: #aaa;
             font-size: 0.9rem;
+            color: #aaa;
             border-top: 1px solid #444;
             padding-top: 20px;
         }
-        
+
         .confetti {
             position: absolute;
-            width: 10px;
-            height: 10px;
-            background-color: #ffeb3b;
+            top: -20px;
             border-radius: 50%;
             animation: fall linear forwards;
         }
-        
+
         @keyframes fall {
             to {
-                transform: translateY(100vh) rotate(360deg);
+                transform: translateY(100%) rotate(360deg);
             }
         }
-        
-        @media (max-width: 768px) {
-            .container {
-                padding: 25px;
-            }
-            
-            .carnival-title {
-                font-size: 2.2rem;
-            }
-            
-            .congrats-message {
-                font-size: 1.6rem;
-            }
-            
-            .instructions, .rules {
-                padding: 20px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .container {
-                padding: 20px;
-            }
-            
-            .carnival-title {
-                font-size: 1.8rem;
-            }
-            
-            .congrats-message {
-                font-size: 1.4rem;
-                padding: 15px;
-            }
-            
-            .subtitle {
-                font-size: 1.2rem;
-            }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .prize { font-size: 1.4rem; }
+            .subtitle { font-size: 1.2rem; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1 class="carnival-title">SURPRESA DE CARNAVAL!!!</h1>
-        <p class="subtitle">Você escaneou o QR Code do abadá!</p>
-        
-        <div class="congrats-message">
-            PARABÉNS, VOCÊ ACABA DE GANHAR UM BEIJO!
-        </div>
-        
-        <div class="instructions">
-            <p>Mostre esta página para a pessoa que está usando o abadá, e se divirta!</p>
-            <p style="margin-top: 15px; font-style: italic; color: #ffeb3b;">Obs: O beijo pode ser no rosto ou na boca, combinado entre as partes! 😉</p>
-        </div>
-        
-        <div class="rules">
-            <h2 class="rules-title">Regras para o resgate do beijo</h2>
-            <ul class="rules-list">
-                <li><i class="fas fa-check-circle"></i> Ser maior de 18 anos</li>
-                <li><i class="fas fa-check-circle"></i> Ser solteira</li>
-                <li><i class="fas fa-heart"></i> Estar no clima de carnaval!</li>
-            </ul>
-        </div>
-        
-        <p style="font-size: 1.2rem; margin: 20px 0; color: #ffeb3b;">Entre em contato pelo Instagram:</p>
-        <a href="https://www.instagram.com/evandrolluiz" target="_blank" class="instagram-link">
-            <i class="fab fa-instagram"></i> @evandrolluiz
-        </a>
-        
-        <div class="footer">
-            <p>Página criada para o abadá de carnaval. Divirta-se com responsabilidade!</p>
-            <p style="margin-top: 5px;">© 2023 - Carnaval</p>
-        </div>
+
+<div class="container">
+    <h1>SURPRESA DE CARNAVAL!!!</h1>
+    <p class="subtitle">Você escaneou o QR Code do abadá!</p>
+
+    <div class="prize">
+        PARABÉNS, VOCÊ ACABA DE GANHAR UM BEIJO!
     </div>
 
-    <script>
-        // Criar efeito de confetes
-        function createConfetti() {
-            const colors = ['#ff0080', '#ff8c00', '#ffff00', '#00ff00', '#00ffff', '#0000ff', '#8b00ff'];
-            const container = document.querySelector('.container');
-            
-            for (let i = 0; i < 50; i++) {
-                const confetti = document.createElement('div');
-                confetti.className = 'confetti';
-                
-                // Posição aleatória
-                const left = Math.random() * 100;
-                const size = Math.random() * 10 + 5;
-                const color = colors[Math.floor(Math.random() * colors.length)];
-                const animationDuration = Math.random() * 3 + 2;
-                
-                confetti.style.left = `${left}%`;
-                confetti.style.width = `${size}px`;
-                confetti.style.height = `${size}px`;
-                confetti.style.backgroundColor = color;
-                confetti.style.animationDuration = `${animationDuration}s`;
-                confetti.style.opacity = Math.random() * 0.7 + 0.3;
-                
-                document.body.appendChild(confetti);
-                
-                // Remover confete após animação
-                setTimeout(() => {
-                    confetti.remove();
-                }, animationDuration * 1000);
-            }
+    <div class="instructions">
+        Mostre esta página para a pessoa que está usando o abadá e se divirta!
+        <br><br>
+        <em style="color:#ffeb3b;">Obs: O beijo pode ser no rosto ou na boca, combinado entre as partes 😉</em>
+    </div>
+
+    <div class="rules">
+        <h2>Regras para o resgate do beijo</h2>
+        <ul>
+            <li><i class="fas fa-check-circle"></i> Ser maior de 18 anos</li>
+            <li><i class="fas fa-check-circle"></i> Ser solteira</li>
+            <li><i class="fas fa-heart"></i> Estar no clima de carnaval!</li>
+        </ul>
+    </div>
+
+    <div class="instagram">
+        Entre em contato pelo Instagram:
+        <br>
+        <a class="instagram-btn" href="https://www.instagram.com/evandrolluiz" target="_blank">
+            <i class="fab fa-instagram"></i> @evandrolluiz
+        </a>
+    </div>
+
+    <div class="footer">
+        Página criada para o abadá de carnaval • Divirta-se com responsabilidade
+        <br>© 2023 - Carnaval
+    </div>
+</div>
+
+<script>
+    const container = document.querySelector('.container');
+    const colors = ['#ff0080','#ff8c00','#ffff00','#00ff00','#00ffff','#0000ff','#8b00ff'];
+
+    function confetti() {
+        for (let i = 0; i < 30; i++) {
+            const c = document.createElement('div');
+            c.className = 'confetti';
+
+            const size = Math.random() * 8 + 5;
+            c.style.width = size + 'px';
+            c.style.height = size + 'px';
+            c.style.left = Math.random() * 100 + '%';
+            c.style.background = colors[Math.floor(Math.random() * colors.length)];
+            c.style.animationDuration = (Math.random() * 2 + 2) + 's';
+            c.style.opacity = Math.random();
+
+            container.appendChild(c);
+
+            setTimeout(() => c.remove(), 4000);
         }
-        
-        // Criar confetes periodicamente
-        setInterval(createConfetti, 1500);
-        
-        // Criar alguns confetes iniciais
-        setTimeout(createConfetti, 300);
-        setTimeout(createConfetti, 800);
-        
-        // Adicionar efeito de clique no link do Instagram
-        document.querySelector('.instagram-link').addEventListener('click', function() {
-            this.style.transform = 'scale(0.95)';
-            setTimeout(() => {
-                this.style.transform = '';
-            }, 150);
-        });
-    </script>
+    }
+
+    setInterval(confetti, 1500);
+    confetti();
+</script>
+
 </body>
 </html>
